@@ -8,7 +8,7 @@ resource "aws_ecr_repository" "ecr_repository" {
 
   tags = merge(tomap({
     Name = "ecr-${var.application}-${var.tags["environment"]}",
-    "environment" = "${var.tags["environment"]}" }),
+    "environment" = "${var.tags["environment"]}"}),
     var.default_tags,
     var.tags
   )
