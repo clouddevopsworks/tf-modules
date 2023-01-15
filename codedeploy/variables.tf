@@ -14,6 +14,11 @@ variable "service_role_arn" {
   description = "The service role ARN that allows deployments"
 }
 
+variable "termination_wait_time_in_minutes" {
+  type        = number
+  description = "The number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment"
+}
+
 variable "cluster_name" {
   type        = string
   description = "The name of the ECS cluster"
