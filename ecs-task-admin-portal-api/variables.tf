@@ -68,6 +68,11 @@ variable "execution_role_arn" {
   description = "ARN of the task execution role that the Amazon ECS container agent and the Docker daemon can assume"
 }
 
+variable "task_role_arn" {
+  type        = string
+  description = "ARN of IAM role that allows your Amazon ECS container task to make calls to other AWS services"
+}
+
 variable "tags" {
   description = "aws resourse tags"
   type        = map(string)

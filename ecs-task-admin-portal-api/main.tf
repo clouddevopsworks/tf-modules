@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   memory                   = var.fargate_memory
   container_definitions    = data.template_file.container_definition.rendered
   execution_role_arn       = var.execution_role_arn
-
+  task_role_arn            = var.task_role_arn
 
   runtime_platform {
     operating_system_family = "LINUX"
