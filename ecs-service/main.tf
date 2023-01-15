@@ -1,10 +1,10 @@
 resource "aws_ecs_service" "ecs_service" {
-  name                 = "ecs-service-${var.application}-${var.tags["environment"]}"
-  cluster              = var.cluster_name
-  task_definition      = var.task_definition_arn
-  desired_count        = var.desired_count
-  force_new_deployment = true
-
+  name                   = "ecs-service-${var.application}-${var.tags["environment"]}"
+  cluster                = var.cluster_name
+  task_definition        = var.task_definition_arn
+  desired_count          = var.desired_count
+  force_new_deployment   = true
+  enable_execute_command = true
   load_balancer {
     target_group_arn = var.target_group_arn
     container_name   = var.container_name
