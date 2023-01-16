@@ -6,7 +6,6 @@ variable "domain_name" {
 variable "subject_alternative_names" {
   type        = list(string)
   description = "The tag mutability setting for the repository"
-  default     = "MUTABLE"
 }
 
 variable "tags" {
