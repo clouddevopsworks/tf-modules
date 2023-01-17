@@ -6,6 +6,7 @@ resource "aws_ecs_service" "ecs_service" {
   force_new_deployment   = true
   enable_execute_command = true
   launch_type            = "FARGATE"
+  scheduling_strategy    = "REPLICA"
   load_balancer {
     target_group_arn = var.target_group_arn
     container_name   = var.container_name
@@ -26,17 +27,16 @@ resource "aws_ecs_service" "ecs_service" {
     assign_public_ip = var.assign_public_ip
   }
 
-  /* capacity_provider_strategy {
+  capacity_provider_strategy {
     capacity_provider = "FARGATE_SPOT"
     weight            = 100
     base              = 1
-  } */
+  }
 
   lifecycle {
     ignore_changes = [
-      desired_count, # Preserve desired count when updating an autoscaled ECS Service
       load_balancer,
-      network_configuration,
+      desired_count,
       task_definition,
     ]
   }
