@@ -33,10 +33,8 @@ resource "aws_ecs_service" "ecs_service" {
 
   lifecycle {
     ignore_changes = [
-      load_balancer,
-      desired_count,
-      capacity_provider_strategy,
-    ]
+      task_definition,
+      desired_count
   }
 
   tags = merge(tomap({
