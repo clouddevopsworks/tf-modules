@@ -35,6 +35,7 @@ resource "aws_ecs_service" "ecs_service" {
     ignore_changes = [
       task_definition,
       desired_count
+    ]
   }
 
   tags = merge(tomap({
