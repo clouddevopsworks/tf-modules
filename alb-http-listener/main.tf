@@ -1,7 +1,7 @@
 resource "aws_lb_listener" "lb_listener_redirect" {
   count             = var.redirect == true ? 1 : 0
   load_balancer_arn = var.load_balancer_arn
-  port              = "80"
+  port              = var.port
   protocol          = "HTTP"
 
   default_action {
@@ -26,7 +26,7 @@ resource "aws_lb_listener" "lb_listener_redirect" {
 resource "aws_lb_listener" "http_lb_listener" {
   count             = var.redirect == false ? 1 : 0
   load_balancer_arn = var.load_balancer_arn
-  port              = "80"
+  port              = var.port
   protocol          = "HTTP"
 
   default_action {

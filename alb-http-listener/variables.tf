@@ -3,6 +3,11 @@ variable "redirect" {
   description = "enable http -> https redirection"
 }
 
+variable "port" {
+  type        = number
+  description = "alb listner port"
+}
+
 variable "application" {
   type        = string
   description = "comprehensinve application name"
