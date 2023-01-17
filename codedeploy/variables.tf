@@ -34,6 +34,11 @@ variable "listener_arns" {
   description = "List of Amazon Resource Names (ARNs) of the load balancer listeners"
 }
 
+variable "test_listener_arns" {
+  type        = list(string)
+  description = "List of Amazon Resource Names (ARNs) of the load balancer listeners"
+}
+
 variable "blue_target_group_name" {
   type        = string
   description = "Name of the target group"

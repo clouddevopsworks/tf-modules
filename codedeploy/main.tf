@@ -49,9 +49,9 @@ resource "aws_codedeploy_deployment_group" "codedeploy_deployment_group" {
         listener_arns = var.listener_arns
       }
 
-      /* test_traffic_route {
-        listener_arns = var.listener_arns
-      } */
+      test_traffic_route {
+        listener_arns = var.test_listener_arns
+      }
 
       target_group {
         name = var.blue_target_group_name
