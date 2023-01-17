@@ -6,7 +6,7 @@ resource "aws_ecs_service" "ecs_service" {
   force_new_deployment   = true
   enable_execute_command = true
   scheduling_strategy    = "REPLICA"
-  launch_type            = "FARGATE"
+  /* launch_type            = "FARGATE" */
   load_balancer {
     target_group_arn = var.target_group_arn
     container_name   = var.container_name
