@@ -1,6 +1,6 @@
 resource "aws_ecs_service" "ecs_service" {
   name                   = "ecs-service-${var.application}-${var.tags["environment"]}"
-  cluster                = var.cluster_name
+  /* cluster                = var.cluster_name */
   task_definition        = var.task_definition_arn
   desired_count          = var.desired_count
   force_new_deployment   = true
@@ -29,7 +29,7 @@ resource "aws_ecs_service" "ecs_service" {
   capacity_provider_strategy {
     capacity_provider = "FARGATE_SPOT"
     weight            = 100
-    /* base              = 0 */
+    base              = 1
   }
 
   lifecycle {
