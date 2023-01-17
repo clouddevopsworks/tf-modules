@@ -1,8 +1,12 @@
 resource "aws_ecs_cluster" "ecs_cluster" {
   name = "ecs-cluster-${var.application}-${var.tags["environment"]}"
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
 }
 
-resource "aws_ecs_cluster_capacity_providers" "capacity_providers" {
+/* resource "aws_ecs_cluster_capacity_providers" "capacity_providers" {
   cluster_name = aws_ecs_cluster.ecs_cluster.name
 
   capacity_providers = ["FARGATE"]
@@ -12,5 +16,5 @@ resource "aws_ecs_cluster_capacity_providers" "capacity_providers" {
     weight            = 100
     capacity_provider = "FARGATE"
   }
-}
+} */
 

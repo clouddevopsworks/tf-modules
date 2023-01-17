@@ -3,10 +3,10 @@ variable "application" {
   description = "comprehensinve application name"
 }
 
-/* variable "cluster_name" {
+variable "cluster_name" {
   type        = string
   description = "ARN of an ECS cluster"
-} */
+}
 
 
 variable "task_definition_arn" {
