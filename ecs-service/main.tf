@@ -26,18 +26,17 @@ resource "aws_ecs_service" "ecs_service" {
     assign_public_ip = var.assign_public_ip
   }
 
-  capacity_provider_strategy {
+  /* capacity_provider_strategy {
     capacity_provider = "FARGATE_SPOT"
     weight            = 100
     base              = 1
-  }
+  } */
 
   lifecycle {
     ignore_changes = [
       task_definition,
       desired_count,
-      launch_type,
-      capacity_provider_strategy
+      launch_type
     ]
   }
 
