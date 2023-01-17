@@ -35,8 +35,7 @@ resource "aws_ecs_service" "ecs_service" {
   lifecycle {
     ignore_changes = [
       task_definition,
-      desired_count,
-      launch_type
+      desired_count
     ]
   }
 
