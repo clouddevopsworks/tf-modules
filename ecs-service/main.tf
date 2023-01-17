@@ -34,8 +34,10 @@ resource "aws_ecs_service" "ecs_service" {
 
   lifecycle {
     ignore_changes = [
+      desired_count, # Preserve desired count when updating an autoscaled ECS Service
+      load_balancer,
+      network_configuration,
       task_definition,
-      desired_count
     ]
   }
 
