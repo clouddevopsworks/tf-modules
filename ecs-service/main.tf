@@ -36,7 +36,8 @@ resource "aws_ecs_service" "ecs_service" {
     ignore_changes = [
       task_definition,
       desired_count,
-      launch_type
+      launch_type,
+      capacity_provider_strategy
     ]
   }
 
