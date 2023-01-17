@@ -38,8 +38,7 @@ resource "aws_ecs_service" "ecs_service" {
       load_balancer,
       desired_count,
       task_definition,
-      capacity_provider_strategy,
-      var.ignore_changes,
+      capacity_provider_strategy
     ]
   }
 

@@ -49,11 +49,6 @@ variable "assign_public_ip" {
   description = " Assign a public IP address to the ENI "
 }
 
-variable "ignore_changes" {
-  type        = string
-  description = "tf lifecycle policy"
-}
-
 variable "tags" {
   description = "aws resourse tags"
   type        = map(string)
