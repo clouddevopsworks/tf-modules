@@ -5,7 +5,6 @@ resource "aws_ecs_service" "ecs_service" {
   desired_count          = var.desired_count
   force_new_deployment   = true
   enable_execute_command = true
-  launch_type            = ""
   scheduling_strategy    = "REPLICA"
   load_balancer {
     target_group_arn = var.target_group_arn
@@ -30,7 +29,7 @@ resource "aws_ecs_service" "ecs_service" {
   capacity_provider_strategy {
     capacity_provider = "FARGATE_SPOT"
     weight            = 100
-    base              = 1
+    base              = 0
   }
 
   lifecycle {
