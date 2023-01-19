@@ -24,18 +24,51 @@
   "essential": true,
   "cpu": ${cpu_app},
   "memory": ${memory_app},
-  "environment": [{
+  "environment": [
+    {
+      "name": "DB_HOST",
+      "value": "${db_host}"
+    },
+    {
+      "name": "DB_DATABASE",
+      "value": "${db_database}"
+    },
+    {
+      "name": "DB_USERNAME",
+      "value": "${db_username}"
+    },
+    {
       "name": "DB_PASSWORD",
       "value": "${db_password}"
+    },
+    {
+      "name": "MAIL_USERNAME",
+      "value": "${mail_username}"
     },
     {
       "name": "MAIL_PASSWORD",
       "value": "${mail_password}"
     },
     {
+      "name": "AWS_ACCESS_KEY_ID",
+      "value": "${aws_access_key_id}"
+    },
+    {
       "name": "AWS_SECRET_ACCESS_KEY",
       "value": "${aws_secret_access_key}"
     },
+    {
+      "name": "AWS_BUCKET",
+      "value": "${aws_bucket}"
+    }, 
+    {
+      "name": "AWS_URL",
+      "value": "${aws_url}"
+    },   
+    {
+      "name": "AWS_S3_URL",
+      "value": "${aws_s3_url}"
+    },     
     {
       "name": "ROLLBAR_ACCESS_TOKEN",
       "value": "${rollbar_access_token}"

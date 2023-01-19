@@ -8,7 +8,27 @@ variable "registry" {
   description = "docker registry URL"
 }
 
+variable "db_host" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "db_database" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "db_username" {
+  type        = string
+  description = "environmental varibale"
+}
+
 variable "db_password" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "mail_username" {
   type        = string
   description = "environmental varibale"
 }
@@ -18,7 +38,27 @@ variable "mail_password" {
   description = "environmental varibale"
 }
 
+variable "aws_access_key_id" {
+  type        = string
+  description = "environmental varibale"
+}
+
 variable "aws_secret_access_key" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "aws_bucket" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "aws_url" {
+  type        = string
+  description = "environmental varibale"
+}
+
+variable "aws_s3_url" {
   type        = string
   description = "environmental varibale"
 }

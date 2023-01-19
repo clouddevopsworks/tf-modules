@@ -3,9 +3,17 @@ data "template_file" "container_definition" {
   vars = {
     registry              = var.registry
     environment           = "${var.tags["environment"]}"
+    db_host               = var.db_host
+    db_database           = var.db_database
+    db_username           = var.db_username
     db_password           = var.db_password
+    mail_username         = var.mail_username
     mail_password         = var.mail_password
+    aws_access_key_id     = var.aws_access_key_id
     aws_secret_access_key = var.aws_secret_access_key
+    aws_bucket            = var.aws_bucket
+    aws_url               = var.aws_url
+    aws_s3_url            = var.aws_s3_url
     rollbar_access_token  = var.rollbar_access_token
     cpu_app               = var.cpu_app
     memory_app            = var.memory_app
